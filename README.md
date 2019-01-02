@@ -59,7 +59,7 @@ try {
         //query the No Excuses Content Provider
         ContentResolver contentResolver = getContentResolver();
         //there is no need to include any arguments in the query
-        Cursor cursor = contentResolver.query(Uri.parse("content://com.amvara.noexcusesalarmclock.LinkedServicesProvider"), null, null, null, null);
+        Cursor cursor = contentResolver.query(Uri.parse("content://com.amvara.noexcusesalarmclock.linkedservices"), null, null, null, null);
         if(cursor.getCount() == 0) {
             //your app is not linked
         } else {
@@ -85,7 +85,7 @@ try {
         //query the No Excuses Content Provider
         ContentResolver contentResolver = getContentResolver();
         //there is no need to include any arguments in the query
-        int result = contentResolver.delete(Uri.parse("content://com.amvara.noexcusesalarmclock.LinkedServicesProvider"), null, null);
+        int result = contentResolver.delete(Uri.parse("content://com.amvara.noexcusesalarmclock.linkedservices"), null, null);
         if(result == 0) {
             //The deletion failed. This is most likely because your app wasn't linked in the first place. 
         } else if(result == 1) {
