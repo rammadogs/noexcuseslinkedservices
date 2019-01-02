@@ -51,7 +51,7 @@ protected void onActivityResult(int requestCode, int resultCode, @Nullable Inten
 # Checking the Link
 By referencing the No Excuses Content Provider, it's possible to tell if your app is currently linked. You should check this regularly, as it is possible for the user to revoke permission without your app being notified.
 ```java
-//first check if No Excuses is installed on the phone
+//first, check if No Excuses is installed on the phone
 PackageManager packageManager = getPackageManager();
 try {
     if(packageManager.getPackageInfo("com.amvara.noexcusesalarmclock", 0) != null) {
@@ -77,7 +77,7 @@ try {
 # Removing the Link
 The user can remove the link from within No Excuses Settings. The link will also be removed if the user logs out of No Excuses or clears the app data. Your app can also delete its own link using the No Excuses Content Provider.
 ```java
-//first check if No Excuses is installed on the phone
+//first, check if No Excuses is installed on the phone
 PackageManager packageManager = getPackageManager();
 try {
     if(packageManager.getPackageInfo("com.amvara.noexcusesalarmclock", 0) != null) {
@@ -97,3 +97,5 @@ try {
     e.printStackTrace();
 }
 ```
+# Contact
+Contact us at contact@amvara.com if you have any questions.
