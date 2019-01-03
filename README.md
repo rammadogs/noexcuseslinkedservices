@@ -48,6 +48,17 @@ protected void onActivityResult(int requestCode, int resultCode, @Nullable Inten
     }
 }
 ```
+# The Service
+The linked service must be exported for the linking to work. It should look like this in your Manifest:
+```xml
+<service
+    android:name=".OvernightService"
+    android:enabled="true"
+    android:exported="true" />
+```
+When an alarm event occurs, you'll receive it in your Service's onStartCommand method and you can interpret it with the following code:
+```java
+```
 # Checking the Link
 By referencing the No Excuses Content Provider, it's possible to tell if your app is currently linked. You should check this regularly, as it is possible for the user to revoke permission without your app being notified.
 ```java
