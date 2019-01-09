@@ -134,4 +134,4 @@ try {
 }
 ```
 # Contact
-Contact us at contact@amvara.com if you have any questions.
+Contact us at [contact@amvara.com](mailto:contact@amvara.com) if you have any questions.
