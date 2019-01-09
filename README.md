@@ -1,4 +1,3 @@
-# No Excuses Alarm Clock
 No Excuses Alarm Clock uses loud ringing, flashing lights, text-to-speech and guided meditations to wake the user up in the morning. It also locks the user out of their phone and forces them to get out of bed before they can unlock the phone and turn the alarm off. Because the alarm must be set by the user every night, linking with this app can be useful for detecting when a user is sleeping, allowing your app to trigger background tasks and services to run on the user's phone during the night.
 # Rules
 * Each app may only link one service at a time.
