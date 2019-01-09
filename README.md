@@ -1,3 +1,4 @@
+#No Excuses Alarm Clock
 No Excuses Alarm Clock uses loud ringing, flashing lights, text-to-speech and guided meditations to wake the user up in the morning. It also locks the user out of their phone and forces them to get out of bed before they can unlock the phone and turn the alarm off. Because the alarm must be set by the user every night, linking with this app can be useful for detecting when a user is sleeping, allowing your app to trigger background tasks and services to run on the user's phone during the night.
 # Rules
 * Each app may only link one service at a time.
@@ -57,6 +58,34 @@ The linked service must be exported for the linking to work. It should look like
 ```
 When an alarm event occurs, you'll receive it in your Service's onStartCommand method and you can interpret it with the following code:
 ```java
+public static final String BROADCAST_EXTRA_STATUS = "status";
+public static final String BROADCAST_EXTRA_RING_TIME = "ring_time";
+
+public static final int BROADCAST_STATUS_WAITING = 0;
+public static final int BROADCAST_STATUS_RINGING = 1;
+public static final int BROADCAST_STATUS_FINISHED = 2;
+
+@Override
+public int onStartCommand(Intent intent, int flags, int startId) {
+
+
+    switch(intent.getIntExtra(BROADCAST_EXTRA_STATUS, -1)) {
+        case BROADCAST_STATUS_WAITING:
+            //the user has just set the alarm
+            //you can get a long representing the UNIX time at which the alarm will go off
+            long alarmTime = intent.getLongExtra(BROADCAST_EXTRA_RING_TIME, -1);
+            break;
+        case BROADCAST_STATUS_RINGING:
+            //the alarm has just started ringing
+            break;
+        case BROADCAST_STATUS_FINISHED:
+            //the alarm has been cancelled or turned off by the user
+            break;
+    }
+
+
+    return super.onStartCommand(intent, flags, startId);
+}
 ```
 # Checking the Link
 By referencing the No Excuses Content Provider, it's possible to tell if your app is currently linked. You should check this regularly, as it is possible for the user to revoke permission without your app being notified.
