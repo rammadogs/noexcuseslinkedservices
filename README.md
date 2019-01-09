@@ -67,22 +67,19 @@ public static final int BROADCAST_STATUS_FINISHED = 2;
 
 @Override
 public int onStartCommand(Intent intent, int flags, int startId) {
-
-
     switch(intent.getIntExtra(BROADCAST_EXTRA_STATUS, -1)) {
         case BROADCAST_STATUS_WAITING:
-            //the user has just set the alarm
+            //the user has set the alarm
             //you can get a long representing the UNIX time at which the alarm will go off
             long alarmTime = intent.getLongExtra(BROADCAST_EXTRA_RING_TIME, -1);
             break;
         case BROADCAST_STATUS_RINGING:
-            //the alarm has just started ringing
+            //the alarm has started ringing
             break;
         case BROADCAST_STATUS_FINISHED:
             //the alarm has been cancelled or turned off by the user
             break;
     }
-
 
     return super.onStartCommand(intent, flags, startId);
 }
