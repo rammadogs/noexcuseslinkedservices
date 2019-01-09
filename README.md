@@ -8,6 +8,7 @@ No Excuses Alarm Clock uses loud ringing, flashing lights, text-to-speech and gu
 * Always respect the user's privacy.
 * Respect the phone - avoid draining the battery or using mobile data allowance.
 * We reserve the right to blacklist your app from our linked services feature if we feel that these rules aren't being followed.
+
 # Requesting Permission
 To run overnight, your app must request permission to do so from the user.
 
