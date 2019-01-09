@@ -11,7 +11,7 @@ No Excuses Alarm Clock uses loud ringing, flashing lights, text-to-speech and gu
 # Requesting Permission
 To run overnight, your app must request permission to do so from the user.
 
-![Request Permission Activity](https://.png "The user will be asked for permission for your app to run overnight.")
+![Request Permission Activity](permission_screen.png "The user will be asked for permission for your app to run overnight.")
 
 Use the following code to request permission:
 ```java
