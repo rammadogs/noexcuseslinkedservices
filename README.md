@@ -16,10 +16,11 @@ To run overnight, your app must request permission to do so from the user.
 
 Use the following code to request permission:
 ```java
-//first, check if No Excuses is installed on the phone
+//first, check if the right version of No Excuses is installed on the phone
 PackageManager packageManager = getPackageManager();
 try {
-    if(packageManager.getPackageInfo("com.amvara.noexcusesalarmclock", 0) != null) {
+    PackageInfo packageInfo = packageManager.getPackageInfo("com.amvara.noexcusesalarmclock", 0);
+    if(packageInfo != null && packageInfo.versionCode >= 8) {
 
         //start the No Excuses Permission Activity
         Intent intent = new Intent();
@@ -88,10 +89,11 @@ public int onStartCommand(Intent intent, int flags, int startId) {
 # Checking the Link
 By referencing the No Excuses Content Provider, it's possible to tell if your app is currently linked. You should check this regularly, as it is possible for the user to revoke permission without your app being notified.
 ```java
-//first, check if No Excuses is installed on the phone
+//first, check if the right version of No Excuses is installed on the phone
 PackageManager packageManager = getPackageManager();
 try {
-    if(packageManager.getPackageInfo("com.amvara.noexcusesalarmclock", 0) != null) {
+    PackageInfo packageInfo = packageManager.getPackageInfo("com.amvara.noexcusesalarmclock", 0);
+    if(packageInfo != null && packageInfo.versionCode >= 8) {
 
         //query the No Excuses Content Provider
         ContentResolver contentResolver = getContentResolver();
@@ -114,10 +116,11 @@ try {
 # Removing the Link
 The user can remove the link from within No Excuses Settings. The link will also be removed if the user logs out of No Excuses or clears the app data. Your app can also delete its own link using the No Excuses Content Provider.
 ```java
-//first, check if No Excuses is installed on the phone
+//first, check if the right version of No Excuses is installed on the phone
 PackageManager packageManager = getPackageManager();
 try {
-    if(packageManager.getPackageInfo("com.amvara.noexcusesalarmclock", 0) != null) {
+    PackageInfo packageInfo = packageManager.getPackageInfo("com.amvara.noexcusesalarmclock", 0);
+    if(packageInfo != null && packageInfo.versionCode >= 8) {
 
         //query the No Excuses Content Provider
         ContentResolver contentResolver = getContentResolver();
